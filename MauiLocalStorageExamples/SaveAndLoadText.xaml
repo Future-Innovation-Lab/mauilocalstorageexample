@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLocalStorageExamples.SaveAndLoadText"
+             xmlns:local="clr-namespace:MauiLocalStorageExamples"
+             Title="SaveAndLoadText" x:DataType="local:SaveAndLoadText">
+    <StackLayout Margin="20">
+      
+        <Label Text = "Save and Load Text"  FontSize="Medium" FontAttributes="Bold"/>
+        <Label Text = "Type below and press Save, then Load"  FontSize="Medium" FontAttributes="Bold"/>
+        <Entry Placeholder="Type some text" Text="{Binding InputText}"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Load" Command="{Binding LoadCommand}" IsEnabled="{Binding LoadButtonEnabled}" />
+            <Button Text="Save" Command="{Binding SaveCommand}" IsEnabled="{Binding SaveButtonEnabled}"/>
+        </StackLayout>
+
+        <Label Text="{Binding OutputText}"/>
+    </StackLayout>
+</ContentPage>
